@@ -1,7 +1,7 @@
 <template>
-    <div class="footer">
+    <footer class="footer">
         <span>Webnovels project</span>
-    </div>
+    </footer>
 </template>
 
 <script>
