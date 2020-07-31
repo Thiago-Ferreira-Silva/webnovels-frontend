@@ -11,5 +11,6 @@ export default {
 <style>
 .content {
     grid-area: content;
+    background-color: #a0a0a0;
 }
 </style>

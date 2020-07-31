@@ -1,17 +1,21 @@
 <template>
-  <div id="app" :class="{ hide_menu: !isMenuVisible || !user }">
+  <div id="app">
+    <Header />
+    <Menu />
+    <Content />
     <Footer />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import Footer from './components/template/Footer.vue'
+import Header from './components/template/Header'
+import Menu from "./components/template/Menu"
+import Content from './components/template/Content'
+import Footer from './components/template/Footer'
 
 export default {
   name: 'App',
-  components: { Footer },
-  computed: mapState(['isMenuVisible', 'user'])
+  components: { Header, Menu, Content, Footer }
 }
 </script>
 

@@ -11,5 +11,6 @@ export default {
 <style>
 .menu {
     grid-area: menu;
+    background-color: #c0c0c0;
 }
 </style>
