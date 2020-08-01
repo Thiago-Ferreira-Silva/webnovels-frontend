@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ 'hide_menu': !isMenuVisible}">
     <Header title="Webnovels" :hideToggle="false" />
     <Menu />
     <Content />
@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Header from './components/template/Header'
 import Menu from "./components/template/Menu"
 import Content from './components/template/Content'
@@ -15,7 +17,8 @@ import Footer from './components/template/Footer'
 
 export default {
   name: 'App',
-  components: { Header, Menu, Content, Footer }
+  components: { Header, Menu, Content, Footer },
+  computed: mapState(['isMenuVisible'])
 }
 </script>
 
