@@ -52,7 +52,7 @@ export default {
     text-align: center;
 }
 
-.title a {
+.title a, .title a:hover {
     color: #222;
     text-decoration: none;
 }

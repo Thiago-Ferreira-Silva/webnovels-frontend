@@ -15,6 +15,8 @@ export default {
 <style>
 .page-title h1 {
     margin: 0px;
+    padding: 10px 10px 0px 10px;
+    font-size: 1.5rem;
 }
 
 </style>
