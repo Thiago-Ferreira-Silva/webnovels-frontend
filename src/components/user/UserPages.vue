@@ -1,6 +1,6 @@
 <template>
     <div class="admin-pages">
-        <PageTitle icon="fa fa-cogs" main="Administration" />
+        <PageTitle icon="fa fa-cogs" main="User" />
     </div>
 </template>
 
@@ -8,7 +8,7 @@
 import PageTitle from '../template/PageTitle'
 
 export default {
-    name: 'AdminPages',
+    name: 'UserPages',
     components: { PageTitle }
 }
 </script>
