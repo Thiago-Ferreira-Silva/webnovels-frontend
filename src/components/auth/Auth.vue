@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { baseApiUrl, userKey, showError } from '@/global'
+import { userKey, baseApiUrl, showError } from '@/global'
 import axios from 'axios'
 
 export default {

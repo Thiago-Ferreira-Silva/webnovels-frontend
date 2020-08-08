@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-const baseApiUrl = 'http://localhost:8081'
+export const baseApiUrl = 'http://localhost:8081'
 const userKey = '__webnovel_user'
 
 function showError(e) {
