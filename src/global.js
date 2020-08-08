@@ -1,9 +1,9 @@
 import Vue from 'vue'
 
 export const baseApiUrl = 'http://localhost:8081'
-const userKey = '__webnovel_user'
+export const userKey = '__webnovel_user'
 
-function showError(e) {
+export function showError(e) {
     if(e && e.response && e.response.data) {
         Vue.toasted.global.defaultError({ msg: e.response.data })
     } else if(typeof e === 'string') {
@@ -12,8 +12,3 @@ function showError(e) {
         Vue.toasted.global.defaultError()
     }
 }
-
-export default {baseApiUrl, userKey, showError}
-
-
-//fix that
