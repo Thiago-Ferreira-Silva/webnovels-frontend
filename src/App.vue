@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+import { baseApiUrl, userKey } from '@/global'
 import { mapState } from 'vuex'
 
 import Header from './components/template/Header'
@@ -18,7 +20,40 @@ import Footer from './components/template/Footer'
 export default {
   name: 'App',
   components: { Header, Menu, Content, Footer },
-  computed: mapState(['isMenuVisible', 'user'])
+  computed: mapState(['isMenuVisible', 'user']),
+  data: function() {
+    return {
+      validatingToken: true
+    }
+  },
+  methods: {
+    async validateToken() {
+      this.validatingToken = true
+
+      const userData = JSON.parse(localStorage.getItem(userKey))
+      this.$store.commit('setUser', null)
+
+      if(!userData) {
+        this.validatingToken = false
+        this.$router.push({ name: 'auth' })
+        return
+      }
+
+      const res = await axios.post(`${baseApiUrl}/validateToken`, userData)
+
+      if (res.data) {
+        this.$store.commit('setUser', userData)
+      } else {
+        localStorage.removeItem(userKey)
+        this.$router.push({ name: 'auth' })
+      }
+
+      this.validatingToken = false
+    }
+  },
+  created() {
+    this.validateToken()
+  }
 }
 </script>
 
