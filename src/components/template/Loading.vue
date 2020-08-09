@@ -21,9 +21,9 @@ export default {
 .loading {
     border: 1.5rem solid white;
     border-radius: 50%;
-    border-top: 1.6rem solid #56a5eb;
-    height: 12rem;
-    width: 12rem;
+    border-top: 1.6rem solid #b9c9ff;
+    height: 6rem;
+    width: 6rem;
     animation: spin 2s linear infinite;
 }
 
