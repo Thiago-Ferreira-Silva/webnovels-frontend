@@ -14,7 +14,7 @@ const routes = [{
 },
 {
     name: 'userPages',
-    path: '/admin',
+    path: '/profile',
     component: UserPages
 }, 
 {

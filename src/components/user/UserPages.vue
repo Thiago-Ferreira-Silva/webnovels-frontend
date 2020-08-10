@@ -1,18 +1,25 @@
 <template>
     <div class="admin-pages">
-        <PageTitle icon="fa fa-cogs" main="User" />
+        <h1>{{user.name}}</h1>
     </div>
 </template>
 
 <script>
-import PageTitle from '../template/PageTitle'
+import { mapState } from 'vuex'
 
 export default {
     name: 'UserPages',
-    components: { PageTitle }
+    components: { },
+    computed: mapState(['user'])
 }
 </script>
 
 <style>
-
+h1 {
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 2.3rem;
+    color: rgb(64, 64, 65);
+}
 </style>
