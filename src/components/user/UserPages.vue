@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-pages">
+    <div class="user-pages">
         <h1>{{user.name}}</h1>
         <div class="tabs">
             <b-card no-body>
