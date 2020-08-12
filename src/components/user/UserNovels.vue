@@ -15,7 +15,7 @@ import { mapState } from 'vuex'
 import axios from 'axios'
 
 export default {
-    name: 'Novels',
+    name: 'UserNovels',
     computed: mapState(['user']),
     data: function() {
         return {

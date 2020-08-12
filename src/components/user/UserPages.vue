@@ -5,7 +5,7 @@
             <b-card no-body>
                 <b-tabs card>
                     <b-tab title="Novels" active>
-                        <Novels />
+                        <UserNovels />
                     </b-tab>
                     <b-tab title="New Novel">
                         <NewNovel />
@@ -24,11 +24,11 @@ import { mapState } from 'vuex'
 
 import NewNovel from './NewNovel'
 import NewChapter from './NewChapter'
-import Novels from './Novels'
+import UserNovels from './UserNovels'
 
 export default {
     name: 'UserPages',
-    components: { NewNovel, NewChapter, Novels },
+    components: { NewNovel, NewChapter, UserNovels },
     computed: mapState(['user'])
 }
 </script>
