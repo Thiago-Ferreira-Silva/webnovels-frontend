@@ -10,11 +10,13 @@
 
 <script>
 import { baseApiUrl, showError } from '@/global'
+import { mapState } from 'vuex'
 
 import axios from 'axios'
 
 export default {
     name: 'Novels',
+    computed: mapState(['user']),
     data: function() {
         return {
             novels: []
@@ -22,7 +24,7 @@ export default {
     },
     methods: {
         getNovels() {
-            axios.get(`${baseApiUrl}/novels`)
+            axios.get(`${baseApiUrl}/novels/${this.user.id}`)
                 .then( res => this.novels = res.data)
                 .catch(showError)
         }
