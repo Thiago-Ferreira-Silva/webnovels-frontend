@@ -2,7 +2,9 @@
     <div class="novels">
         <ul class="novels-list">
             <li class="novel" v-for="novel in novels" :key="novel.id">
-                {{ novel }}
+                <router-link to="/novel" @click="setNovel(novel.id)">
+                    {{ novel }}
+                </router-link> 
             </li>
         </ul>
     </div>
@@ -27,6 +29,9 @@ export default {
             axios.get(`${baseApiUrl}/novels/user/${this.user.id}`)
                 .then( res => this.novels = res.data)
                 .catch(showError)
+        },
+        setNovel(id) {
+            localStorage.setItem('__novel_id', `${id}`)
         }
     },
     mounted() {

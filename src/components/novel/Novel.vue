@@ -1,5 +1,9 @@
 <template>
-    <div class="novel-container"></div>
+    <div class="novel-container">
+        {{novel}}
+        <hr>
+        {{chapters}}
+    </div>
 </template>
 
 <script>
@@ -13,7 +17,7 @@ export default {
     data: function() {
         return {
             novel: {},
-            chapters: {},
+            chapters: [],
             novelId: localStorage.getItem('__novel_id')
         }
     },
@@ -37,6 +41,7 @@ export default {
     },
     mounted() {
         this.getChapters
+        // não está funcionando, tente usar o store
     }
 }
 </script>
