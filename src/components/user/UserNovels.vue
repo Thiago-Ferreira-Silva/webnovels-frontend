@@ -24,7 +24,7 @@ export default {
     },
     methods: {
         getNovels() {
-            axios.get(`${baseApiUrl}/novels/${this.user.id}`)
+            axios.get(`${baseApiUrl}/novels/user/${this.user.id}`)
                 .then( res => this.novels = res.data)
                 .catch(showError)
         }
