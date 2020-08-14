@@ -36,11 +36,10 @@ export default {
         }
     },
     created() {
-        this.getNovel
+        this.getNovel()
     },
     mounted() {
-        this.getChapters
-        // não está funcionando, tente usar o store
+         this.getChapters()
     }
 }
 </script>
