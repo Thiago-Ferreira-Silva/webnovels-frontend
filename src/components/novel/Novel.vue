@@ -17,13 +17,12 @@ export default {
     data: function() {
         return {
             novel: {},
-            chapters: [],
-            novelId: localStorage.getItem('__novel_id')
+            chapters: []
         }
     },
     methods: {
         getNovel() {
-            axios.get(`${baseApiUrl}/novels/${this.novelId}`)
+            axios.get(`${baseApiUrl}/novels/${localStorage.getItem('__novel_id')}`)
                 .then( res => {
                     this.novel = res.data
                     localStorage.removeItem('__novel_id')

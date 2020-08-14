@@ -1,12 +1,11 @@
 <template>
     <div class="novels">
         <ul class="novels-list">
-            <li class="novel" v-for="novel in novels" :key="novel.id">
-                <router-link to="/novel" @click="setNovel(novel.id)">
-                    {{ novel }}
-                </router-link> 
+            <li class="novel" v-for="novel in novels" :key="novel.id" @click="setNovel(novel.id)">
+                {{ novel }}
             </li>
         </ul>
+        <div id="ff"></div>
     </div>
 </template>
 
@@ -32,12 +31,14 @@ export default {
         },
         setNovel(id) {
             localStorage.setItem('__novel_id', `${id}`)
+            this.$router.push('/novel')
         }
     },
     mounted() {
         this.getNovels()
     }
 }
+
 </script>
 
 <style>
