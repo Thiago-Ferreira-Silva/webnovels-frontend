@@ -40,6 +40,8 @@ export default {
     },
     mounted() {
          this.getChapters()
+
+        //ainda não está funcionando
     }
 }
 </script>
