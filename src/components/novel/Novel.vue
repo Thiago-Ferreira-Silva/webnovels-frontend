@@ -7,6 +7,7 @@
 </template>
 
 <script>
+//crie os links para os capítulos
 import { mapState } from 'vuex'
 import { baseApiUrl, showError } from '@/global'
 
