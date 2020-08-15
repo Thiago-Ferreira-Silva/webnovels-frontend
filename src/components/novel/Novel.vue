@@ -25,6 +25,7 @@ export default {
             axios.get(`${baseApiUrl}/novels/${localStorage.getItem('__novel_id')}`)
                 .then( res => {
                     this.novel = res.data
+                    this.getChapters()
                     localStorage.removeItem('__novel_id')
                     })
                 .catch(showError)
@@ -37,11 +38,6 @@ export default {
     },
     created() {
         this.getNovel()
-    },
-    mounted() {
-         this.getChapters()
-
-        //ainda não está funcionando
     }
 }
 </script>
