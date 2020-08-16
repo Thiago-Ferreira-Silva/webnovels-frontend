@@ -28,14 +28,19 @@ export default {
             axios.get(`${baseApiUrl}/chapter/${chapter.novel_id}/${chapter.number}`)
                 .then( res => this.chapter = res.data)
                 .catch(showError)
-            this.getNovel
+            this.getNovel()
         },
         getNovel() {
             axios.get(`${baseApiUrl}/novels/${this.chapter.novel_id}`)
                 .then( res => this.novel = res.data)
                 .catch(showError)
+        //ainda não está funcionando perfeitamente
         }
+    },
+    created() {
+        this.getChapter()
     }
+    //lembre-se de dar uma olhada em tudo depois de pronto para ver se não tem nada desnecessário
 }
 </script>
 
