@@ -5,6 +5,7 @@ import Home from '../components/home/Home'
 import UserPages from '../components/user/UserPages'
 import Auth from '../components/auth/Auth'
 import Novel from '../components/novel/Novel'
+import Chapter from '../components/chapter/Chapter'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [{
     name: 'novel',
     path: '/novel',
     component: Novel
+},
+{
+    name: 'chapter',
+    path: '/chapter',
+    component: Chapter
 }]
 
 const router = new VueRouter ({

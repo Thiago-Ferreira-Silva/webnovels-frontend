@@ -30,7 +30,7 @@ export default {
                 .catch(showError)
         },
         setNovel(id) {
-            localStorage.setItem('__novel_id', `${id}`)
+            localStorage.setItem('__webnovel_novel_id', `${id}`)
             this.$router.push('/novel')
         }
     },
