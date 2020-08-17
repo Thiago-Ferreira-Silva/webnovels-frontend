@@ -26,15 +26,16 @@ export default {
             const chapter = JSON.parse(localStorage.getItem('__webnovel_chapter'))
             localStorage.removeItem('__webnovel_chapter')
             axios.get(`${baseApiUrl}/chapter/${chapter.novel_id}/${chapter.number}`)
-                .then( res => this.chapter = res.data)
+                .then( res => {
+                    this.chapter = res.data
+                    this.getNovel()
+                })
                 .catch(showError)
-            this.getNovel()
         },
         getNovel() {
             axios.get(`${baseApiUrl}/novels/${this.chapter.novel_id}`)
                 .then( res => this.novel = res.data)
                 .catch(showError)
-        //ainda não está funcionando perfeitamente
         }
     },
     created() {
