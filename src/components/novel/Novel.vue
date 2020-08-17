@@ -31,7 +31,6 @@ export default {
                 .then( res => {
                     this.novel = res.data
                     this.getChapters()
-                    localStorage.removeItem('__webnovel_novel_id')
                     })
                 .catch(showError)
         },
