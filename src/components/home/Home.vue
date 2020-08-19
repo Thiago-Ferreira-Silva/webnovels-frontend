@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <PageTitle icon="fa fa-home" main="Home" />
+    <p>Pense em algo para colocar aqui</p>
+    <p>E termine o menu</p>
   </div>
 </template>
 
