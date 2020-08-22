@@ -14,7 +14,7 @@ import axios from 'axios'
 
 export default {
     name: 'Menu',
-    computed: mapState(['isMenuVisible']),
+    computed: mapState(['isMenuVisible', 'novelId']),
     data: function () {
         return {
             novels: []
@@ -27,8 +27,8 @@ export default {
                 .catch(showError)
         },
         setNovel(id) {
-            localStorage.setItem('__webnovel_novel_id', `${id}`)
-            this.$router.push('/novel')
+            this.$store.commit('setNovelId', id)
+            this.$router.push(`/novel/${id}`)
         }
     },
     mounted() {

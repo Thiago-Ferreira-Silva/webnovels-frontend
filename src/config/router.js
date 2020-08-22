@@ -26,7 +26,7 @@ const routes = [{
 },
 {
     name: 'novel',
-    path: '/novel',
+    path: '/novel/:id',
     component: Novel
 },
 {

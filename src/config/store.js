@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         isMenuVisible: false,
-        user: null
+        user: null,
+        novelId: null
     },
     mutations: {
         toggleMenu(state, isVisible) {
@@ -31,6 +32,9 @@ export default new Vuex.Store({
                 delete axios.defaults.headers.common['Authorization']
                 state.isMenuVisible = false
             }
+        },
+        setNovelId(state, novelId) {
+            state.novelId = novelId
         }
     }
 })

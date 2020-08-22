@@ -11,14 +11,13 @@
 </template>
 
 <script>
-//crie os links para os capítulos
 import { mapState } from 'vuex'
 import { baseApiUrl, showError } from '@/global'
 
 import axios from 'axios'
 export default {
     name: 'Novel',
-    computed: mapState(['user']),
+    computed: mapState(['user', 'novelId']),
     data: function() {
         return {
             novel: {},
@@ -27,7 +26,7 @@ export default {
     },
     methods: {
         getNovel() {
-            axios.get(`${baseApiUrl}/novels/${localStorage.getItem('__webnovel_novel_id')}`)
+            axios.get(`${baseApiUrl}/novels/${this.novelId}`)
                 .then( res => {
                     this.novel = res.data
                     this.getChapters()
@@ -47,6 +46,11 @@ export default {
     },
     created() {
         this.getNovel()
+    },
+    watch: {
+        novelId: function() {
+            this.getNovel()
+        }
     }
 }
 </script>

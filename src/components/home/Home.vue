@@ -3,6 +3,7 @@
     <PageTitle icon="fa fa-home" main="Home" />
     <p>Pense em algo para colocar aqui</p>
     <p>E termine o menu</p>
+    <p>Lembre-se de verificar e corrigir todos os bugs</p>
   </div>
 </template>
 
