@@ -5,6 +5,7 @@
     <p>E termine o menu</p>
     <p>Lembre-se de verificar e corrigir todos os bugs</p>
     <p>Algo para quem está em um dispositivo mobile conseguir vizualizar o user dropdown</p>
+    <p>Implementar o método remove</p>
   </div>
 </template>
 
