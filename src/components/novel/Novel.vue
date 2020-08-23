@@ -7,6 +7,7 @@
         </ul>
         <hr>
         <div class="user">{{user.name}}</div>
+        <button @click="deleteNovel">Delete</button>
     </div>
 </template>
 
@@ -42,6 +43,9 @@ export default {
             const chapter = { 'number': number, 'novel_id': this.novel.id }
             localStorage.setItem('__webnovel_chapter', JSON.stringify(chapter))
             this.$router.push('/chapter')
+        },
+        deleteNovel() {
+            axios.delete(`${baseApiUrl}/novels/${this.novel.id}`)
         }
     },
     created() {
