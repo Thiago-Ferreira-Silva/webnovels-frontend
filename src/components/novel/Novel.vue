@@ -48,6 +48,7 @@ export default {
             axios.delete(`${baseApiUrl}/novels/${this.novel.id}`)
                 .then( () => this.$router.push('/'))
                 .catch(showError)
+        //atualizar as novels no menu e o botão só deve aparecer se for uma novel do usuário
         }
     },
     created() {
