@@ -46,6 +46,8 @@ export default {
         },
         deleteNovel() {
             axios.delete(`${baseApiUrl}/novels/${this.novel.id}`)
+                .then( () => this.$router.push('/'))
+                .catch(showError)
         }
     },
     created() {
