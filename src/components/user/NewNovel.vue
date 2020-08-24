@@ -29,6 +29,7 @@ export default {
 
             axios.post(`${baseApiUrl}/novels`, this.novel)
                 .then(() => {
+                    this.$store.commit('updateNovels', true)
                     this.$toasted.global.defaultSuccess()
                     this.novel = {}
                 })

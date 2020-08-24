@@ -8,7 +8,8 @@ export default new Vuex.Store({
     state: {
         isMenuVisible: false,
         user: null,
-        novelId: null
+        novelId: null,
+        updatingNovels: false
     },
     mutations: {
         toggleMenu(state, isVisible) {
@@ -35,6 +36,14 @@ export default new Vuex.Store({
         },
         setNovelId(state, novelId) {
             state.novelId = novelId
+        },
+        updateNovels(state, updating) {
+            if(updating === undefined) {
+                state.updatingNovels = !state.updatingNovels
+            } else {
+                state.updatingNovels = updating
+            }
+            
         }
     }
 })

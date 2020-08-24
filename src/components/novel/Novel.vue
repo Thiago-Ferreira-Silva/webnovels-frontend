@@ -7,7 +7,7 @@
         </ul>
         <hr>
         <div class="user">{{user.name}}</div>
-        <button @click="deleteNovel">Delete</button>
+        <button v-if="user.id === novel.user_id" @click="deleteNovel">Delete</button>
     </div>
 </template>
 
@@ -46,9 +46,11 @@ export default {
         },
         deleteNovel() {
             axios.delete(`${baseApiUrl}/novels/${this.novel.id}`)
-                .then( () => this.$router.push('/'))
+                .then( () => {
+                    this.$store.commit('updateNovels', true)
+                    this.$router.push('/')
+                })
                 .catch(showError)
-        //atualizar as novels no menu e o botão só deve aparecer se for uma novel do usuário
         }
     },
     created() {

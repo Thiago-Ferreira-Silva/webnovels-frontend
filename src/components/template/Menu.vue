@@ -14,7 +14,7 @@ import axios from 'axios'
 
 export default {
     name: 'Menu',
-    computed: mapState(['isMenuVisible', 'novelId']),
+    computed: mapState(['isMenuVisible', 'novelId', 'updatingNovels']),
     data: function () {
         return {
             novels: []
@@ -33,6 +33,15 @@ export default {
     },
     mounted() {
         this.getNovels()
+    },
+    watch: {
+        updatingNovels: function(b) {
+            if(b === true) {
+            this.getNovels()
+            this.$store.commit('updateNovels', false)
+            }
+            
+        }
     }
 }
 </script>
