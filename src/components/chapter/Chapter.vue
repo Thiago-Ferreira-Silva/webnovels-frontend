@@ -30,6 +30,8 @@ export default {
                 .then( res => {
                     this.chapter = res.data
                     this.getNovel()
+                })
+                .then( () => {
                     this.getAuthor()
                 })
                 .catch(showError)
@@ -47,11 +49,12 @@ export default {
                 .catch(showError)
         },
         getAuthor() {
+            console.log(this.novel.user_id)
             axios.get(`${baseApiUrl}/users/${this.novel.user_id}`)
                 .then( res => {
                     this.author =  res.data
                 })
-                .catch(showError)
+                .catch(showError('assa'))
         }
     },
     created() {
