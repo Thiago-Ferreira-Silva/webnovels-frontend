@@ -2,7 +2,7 @@
     <div class="chapter-container">
         <div class="chapter-title">Title: {{novel.name}} {{chapter.number}}</div>
         <div class="chapter-content">Content: {{ chapter.content }}</div>
-        <div class="chapter-author">Author: {{ novel.user_id }}</div>
+        <div class="chapter-author">Author: {{ author.name }}</div>
         <button v-if="novel.user_id === user.id" @click="deleteChapter">Delete</button>
     </div>
 </template>
@@ -31,14 +31,14 @@ export default {
                     this.chapter = res.data
                     this.getNovel()
                 })
-                .then( () => {
-                    this.getAuthor()
-                })
                 .catch(showError)
         },
         getNovel() {
             axios.get(`${baseApiUrl}/novels/${this.chapter.novel_id}`)
-                .then( res => this.novel = res.data)
+                .then( res => {
+                    this.novel = res.data
+                    this.getAuthor()
+                })
                 .catch(showError)
         },
         deleteChapter() {
@@ -49,9 +49,9 @@ export default {
                 .catch(showError)
         },
         getAuthor() {
-            console.log(this.novel.user_id)
             axios.get(`${baseApiUrl}/users/${this.novel.user_id}`)
                 .then( res => {
+                    //arrumar isso aqui e depois fazer a estilização
                     this.author =  res.data
                 })
                 .catch(showError('assa'))
