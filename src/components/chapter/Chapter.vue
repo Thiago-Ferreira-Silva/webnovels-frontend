@@ -2,7 +2,8 @@
     <div class="chapter-container">
         <div class="chapter-title">Title: {{novel.name}} {{chapter.number}}</div>
         <div class="chapter-content">Content: {{ chapter.content }}</div>
-        <div class="chapter-author">Author: {{ user.name }}</div>
+        <div class="chapter-author">Author: {{ novel.user_id }}</div>
+        <button v-if="novel.user_id === user.id" @click="deleteChapter">Delete</button>
     </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
     data: function() {
         return {
             chapter: {},
-            novel: {}
+            novel: {},
+            author: {}
         }
     },
     methods: {
@@ -28,12 +30,27 @@ export default {
                 .then( res => {
                     this.chapter = res.data
                     this.getNovel()
+                    this.getAuthor()
                 })
                 .catch(showError)
         },
         getNovel() {
             axios.get(`${baseApiUrl}/novels/${this.chapter.novel_id}`)
                 .then( res => this.novel = res.data)
+                .catch(showError)
+        },
+        deleteChapter() {
+            axios.delete(`${baseApiUrl}/chapter/${this.chapter.novel_id}/${this.chapter.number}`)
+                .then( () => {
+                    this.$router.go(-1)
+                })
+                .catch(showError)
+        },
+        getAuthor() {
+            axios.get(`${baseApiUrl}/users/${this.novel.user_id}`)
+                .then( res => {
+                    this.author =  res.data
+                })
                 .catch(showError)
         }
     },
