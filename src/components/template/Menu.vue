@@ -46,7 +46,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .menu {
     grid-area: menu;
     background-color: #c0c0c0;
@@ -60,8 +61,7 @@ export default {
 .novel {
     display: flex;
     justify-content: center;
-
-    text-decoration: none;
+    
     color: #333;
 
     padding: 5px;

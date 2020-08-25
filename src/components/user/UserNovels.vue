@@ -1,11 +1,9 @@
 <template>
     <div class="novels">
-        <ul class="novels-list">
-            <li class="novel" v-for="novel in novels" :key="novel.id" @click="setNovel(novel.id)">
-                {{ novel }}
-            </li>
-        </ul>
-        <div id="ff"></div>
+        <div class="novel" v-for="novel in novels" :key="novel.id" @click="setNovel(novel.id)">
+            <div class="name">{{ novel.name }}</div>
+            <div class="description">{{ novel.description }}</div>
+        </div>
     </div>
 </template>
 
@@ -41,6 +39,26 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+.novels {
+    display: flex;
+    flex-direction: column;
+}
 
+.novel {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.novel:hover {
+    background-color: #0003;
+    cursor: default;
+}
+
+.description {
+    color: #333;
+}
 </style>
