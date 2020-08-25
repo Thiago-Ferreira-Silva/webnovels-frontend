@@ -34,5 +34,7 @@ export default {
 </script>
 
 <style>
-
+.user-pages {
+    padding: 5px;
+}
 </style>
