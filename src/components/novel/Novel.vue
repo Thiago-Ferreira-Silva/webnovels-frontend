@@ -48,7 +48,7 @@ export default {
             axios.delete(`${baseApiUrl}/novels/${this.novel.id}`)
                 .then( () => {
                     this.$store.commit('updateNovels', true)
-                    this.$router.go(-1)
+                    this.$router.push('/')
                 })
                 .catch(showError)
         }

@@ -51,10 +51,9 @@ export default {
         getAuthor() {
             axios.get(`${baseApiUrl}/users/${this.novel.user_id}`)
                 .then( res => {
-                    //arrumar isso aqui e depois fazer a estilização
                     this.author =  res.data
                 })
-                .catch(showError('assa'))
+                .catch(showError)
         }
     },
     created() {
