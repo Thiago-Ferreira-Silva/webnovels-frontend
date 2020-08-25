@@ -72,7 +72,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: grayscale;
   
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 60px 1fr 40px;
   grid-template-columns: 325px 1fr;
