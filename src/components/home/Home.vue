@@ -4,6 +4,7 @@
     <p>Pense em algo para colocar aqui</p>
     <p>Lembre-se de verificar e corrigir todos os bugs</p>
     <p>Falta o estilo das páginas: Home, Novel e Chapter</p>
+    <p>Está indo para o home sem fazer login</p>
   </div>
 </template>
 
