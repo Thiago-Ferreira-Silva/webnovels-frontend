@@ -1,6 +1,5 @@
 <template>
     <div class="user-pages">
-        <h1>{{user.name}}</h1>
         <div class="tabs">
             <b-card no-body>
                 <b-tabs card>
@@ -20,16 +19,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 import NewNovel from './NewNovel'
 import NewChapter from './NewChapter'
 import UserNovels from './UserNovels'
 
 export default {
     name: 'UserPages',
-    components: { NewNovel, NewChapter, UserNovels },
-    computed: mapState(['user'])
+    components: { NewNovel, NewChapter, UserNovels }
 }
 </script>
 

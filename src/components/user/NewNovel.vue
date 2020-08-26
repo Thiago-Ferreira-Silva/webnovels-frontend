@@ -49,7 +49,6 @@ export default {
 
 .new-novel .form {
     padding: 35px;
-    background-color: #fff;
 
     display: flex;
     flex-direction: column;
