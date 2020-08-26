@@ -4,7 +4,7 @@
             <input type="text" placeholder="name" v-model="novel.name">
             <input type="text" placeholder="description" v-model="novel.description">
 
-            <button @click="createNovel">Create Novel</button>
+            <button class="btn btn-primary" @click="createNovel">Create Novel</button>
         </div>
     </div>
 </template>
@@ -44,6 +44,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 50vh;
 }
 
 .new-novel .form {
@@ -54,5 +55,17 @@ export default {
     flex-direction: column;
     align-items: center;
 }
+
+.new-novel .form input {
+    border: solid 1px #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 3px 8px;
+    outline: none;
+
+    font-size: 1.2rem;
+}
+
+
 
 </style>
