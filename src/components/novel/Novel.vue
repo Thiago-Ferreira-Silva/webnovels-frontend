@@ -14,7 +14,7 @@
             <hr>
         </div>
         <div class="author">
-            {{user.name}} mudar para o nome do autor
+            {{novel.user}}
             <button class="btn btn-danger" v-if="user.id === novel.user_id" @click="deleteNovel">Delete</button>
         </div>
     </div>
@@ -39,6 +39,11 @@ export default {
             axios.get(`${baseApiUrl}/novels/${this.novelId}`)
                 .then( res => {
                     this.novel = res.data
+                    axios.get(`${baseApiUrl}/users/${this.novel.user_id}`)
+                        .then( res => {
+                            this.novel.user = res.data.name
+                        })
+                        .catch(showError)
                     this.getChapters()
                     })
                 .catch(showError)
