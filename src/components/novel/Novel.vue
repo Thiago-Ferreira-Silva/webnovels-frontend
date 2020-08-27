@@ -1,6 +1,9 @@
 <template>
     <div class="novel-container">
-        {{novel}}
+        <div class="novel">
+            <div class="novel-name">{{ novel.name }}</div>
+            <div class="novel-description">{{ novel.description }}</div>
+        </div>
         <div>
             <hr>
         </div>
@@ -79,6 +82,17 @@ export default {
 
     min-height: 100%;
     padding: 10px;
+}
+
+.novel-name {
+    margin-left: 200px;
+    font-size: 1.5rem;
+    color: #222;
+}
+
+.novel-description {
+    font-size: 1.1rem;
+    color: #333;
 }
 
 .chapters-list {
