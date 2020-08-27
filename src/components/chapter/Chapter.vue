@@ -1,8 +1,11 @@
 <template>
     <div class="chapter-container">
-        <div class="chapter-title">Title: {{novel.name}} {{chapter.number}}</div>
+        <div class="chapter-title">
+<div class="novel-name">{{ novel.name }}</div>
+<div class="chapter-number">{{ chapter.number }}</div>
+<div class="author">{{ author.name }}</div>
+</div>
         <div class="chapter-content">Content: {{ chapter.content }}</div>
-        <div class="chapter-author">Author: {{ author.name }}</div>
         <button v-if="novel.user_id === user.id" @click="deleteChapter">Delete</button>
     </div>
 </template>
