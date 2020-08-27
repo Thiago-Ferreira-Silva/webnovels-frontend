@@ -2,11 +2,11 @@
     <div class="novel-container">
         {{novel}}
         <hr>
-        <ul class="chapters-list">
-            <li class="chapter" v-for="chapter in chapters" :key="chapter.number" @click="setChapter(chapter.number)">{{ chapter }}</li>
-        </ul>
+        <div class="chapters-list">
+            <div class="chapter" v-for="chapter in chapters" :key="chapter.number" @click="setChapter(chapter.number)">{{ chapter.number }}</div>
+        </div>
         <hr>
-        <div class="user">{{user.name}}</div>
+        <div class="user">{{user.name}} mudar para o nome do autor</div>
         <button v-if="user.id === novel.user_id" @click="deleteNovel">Delete</button>
     </div>
 </template>
@@ -65,5 +65,23 @@ export default {
 </script>
 
 <style>
+.chapters-list {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.chapter {
+    display: flex;
+    align-items: center;
+
+    margin-left: 15px;
+    padding: 30px;
+    font-size: 2rem;
+    
+}
+
+.chapter:hover {
+    background-color: #0003;
+    cursor: default;
+}
 </style>
