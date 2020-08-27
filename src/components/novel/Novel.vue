@@ -1,13 +1,19 @@
 <template>
     <div class="novel-container">
         {{novel}}
-        <hr>
+        <div>
+            <hr>
+        </div>
         <div class="chapters-list">
             <div class="chapter" v-for="chapter in chapters" :key="chapter.number" @click="setChapter(chapter.number)">{{ chapter.number }}</div>
         </div>
-        <hr>
-        <div class="user">{{user.name}} mudar para o nome do autor</div>
-        <button v-if="user.id === novel.user_id" @click="deleteNovel">Delete</button>
+        <div>
+            <hr>
+        </div>
+        <div class="author">
+            {{user.name}} mudar para o nome do autor
+            <button class="btn btn-danger" v-if="user.id === novel.user_id" @click="deleteNovel">Delete</button>
+        </div>
     </div>
 </template>
 
@@ -65,6 +71,16 @@ export default {
 </script>
 
 <style>
+
+.novel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100%;
+    padding: 10px;
+}
+
 .chapters-list {
     display: flex;
     flex-wrap: wrap;
@@ -84,4 +100,16 @@ export default {
     background-color: #0003;
     cursor: default;
 }
+
+.author {
+    justify-self: flex-end;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    width: 80px;
+}
+
 </style>
