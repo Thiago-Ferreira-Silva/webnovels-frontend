@@ -55,6 +55,7 @@ export default {
 .title a, .title a:hover {
     color: #222;
     text-decoration: none;
+    cursor: default;
 }
 
 header.header > a.toggle {
