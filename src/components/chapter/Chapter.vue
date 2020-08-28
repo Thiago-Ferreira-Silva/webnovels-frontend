@@ -1,12 +1,15 @@
 <template>
     <div class="chapter-container">
         <div class="chapter-title">
-<div class="novel-name">{{ novel.name }}</div>
-<div class="chapter-number">{{ chapter.number }}</div>
-<div class="author">{{ author.name }}</div>
-</div>
-        <div class="chapter-content">Content: {{ chapter.content }}</div>
-        <button v-if="novel.user_id === user.id" @click="deleteChapter">Delete</button>
+            <div class="novel-name">{{ novel.name }}</div>
+            <div class="chapter-number">{{ chapter.number }}</div>
+        </div>
+        <div class="author">{{ author.name }}</div>
+        <div>
+            <hr>
+        </div>
+        <div class="chapter-content">{{ chapter.content }}</div>
+        <button class="btn btn-danger" v-if="novel.user_id === user.id" @click="deleteChapter">Delete</button>
     </div>
 </template>
 
@@ -68,4 +71,33 @@ export default {
 
 <style>
 
+.chapter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100%;
+    padding: 10px;
+}
+
+.chapter-title {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.novel-name {
+    margin-left: 100px;
+    font-size: 1.3rem;
+    color: #111;
+}
+
+.chapter-number {
+    margin-left: 30px;
+    font-size: 1.4rem;
+    color: #111;
+}
+
+.author {
+    color: #333;
+}
 </style>

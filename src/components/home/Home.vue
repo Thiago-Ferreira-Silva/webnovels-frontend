@@ -1,19 +1,13 @@
 <template>
   <div class="home">
-    <PageTitle icon="fa fa-home" main="Home" />
-    <p>Pense em algo para colocar aqui</p>
-    <p>Lembre-se de verificar e corrigir todos os bugs</p>
-    <p>Falta o estilo das páginas: Home, Novel e Chapter</p>
+    <p>That's the home page and I don't know what to put here.</p>
     <p>Está indo para o home sem fazer login</p>
   </div>
 </template>
 
 <script>
-import PageTitle from '../template/PageTitle'
-
 export default {
-  name: 'Home',
-  components: { PageTitle }
+  name: 'Home'
 }
 </script>
 
