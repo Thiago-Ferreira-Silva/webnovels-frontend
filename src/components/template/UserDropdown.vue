@@ -13,14 +13,12 @@
 
 <script>
 import { mapState } from 'vuex'
-import { userKey } from '@/global'
 
 export default {
     name: 'UserDropdown',
     computed: mapState(['user']),
     methods: {
         logout() {
-            localStorage.removeItem(userKey)
             this.$store.commit('setUser', null)
             this.$router.push({ name: 'auth' })
         }
